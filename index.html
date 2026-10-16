@@ -3,75 +3,55 @@ layout: default
 title: A journal of the inner life
 description: Thoughtful essays on Rumi, Attar, Saadi, and the living tradition of Sufi wisdom.
 ---
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow"><span class="eyebrow-line"></span> Literature · Mysticism · The life of the heart</p>
-    <h1>For the things<br>the <em>heart</em> knows.</h1>
-    <p class="hero-intro">A quiet space for timeless stories, Sufi poetry, and the wisdom that asks us to look beyond the surface.</p>
-    <div class="hero-actions">
-      <a class="button button-dark" href="{{ '/essays/' | relative_url }}">Explore the essays <span aria-hidden="true">↗</span></a>
-      <a class="text-link" href="{{ '/about/' | relative_url }}">Our purpose <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="hero-note"><span class="note-mark">✳</span><span>Read slowly. Return inward.</span></div>
-  </div>
-  <div class="hero-art" role="img" aria-label="A delicate, antique-inspired illustration of a luminous arch and a winding path">
-    <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-    <div class="art-sun"></div><div class="art-arch"><div class="arch-inner"></div></div>
-    <div class="art-path"></div>
-    <span class="art-caption">The inward journey</span>
-    <span class="art-number">01 / ∞</span>
-  </div>
-  <div class="hero-index"><span>01</span><span class="index-rule"></span><span>THE JOURNAL</span></div>
+<section class="home-hero">
+  <p class="eyebrow">Literature · Mysticism · Reflection</p>
+  <h1>Words for the<br><em>inner life.</em></h1>
+  <p class="hero-description">A literary journal exploring the stories, poems, and ideas that invite us to look beyond the surface.</p>
+  <a class="primary-link" href="{{ '/essays/' | relative_url }}">Explore the essays <span aria-hidden="true">→</span></a>
+  <div class="hero-rule"></div>
+  <p class="hero-note">Read slowly. Think deeply. Return often.</p>
 </section>
 
-<section class="intro-strip">
-  <p class="section-kicker">A note on wonder</p>
-  <p class="intro-quote">“The journey is not merely toward a place, but toward a <em>way of seeing.</em>”</p>
-  <span class="intro-ornament" aria-hidden="true">✳</span>
+<section class="welcome-section">
+  <div class="welcome-label">Our point of view</div>
+  <div class="welcome-copy">
+    <h2>Old wisdom, read with fresh attention.</h2>
+    <p>From Rumi's poetry to the searching tales of Attar and the clear-eyed counsel of Saadi, the Sufi literary tradition offers more than answers. It offers ways to ask better questions about love, pride, generosity, and what it means to live well.</p>
+    <a class="text-link" href="{{ '/traditions/' | relative_url }}">Discover the tradition <span aria-hidden="true">→</span></a>
+  </div>
 </section>
 
-<section class="section latest-section" id="latest">
+<section class="latest-section">
   <div class="section-heading">
-    <div><p class="eyebrow">From the journal</p><h2>Words to <em>linger</em> with.</h2></div>
+    <div>
+      <p class="eyebrow">From the journal</p>
+      <h2>Recent essays</h2>
+    </div>
     <a class="text-link" href="{{ '/essays/' | relative_url }}">All essays <span aria-hidden="true">→</span></a>
   </div>
   {% assign featured_posts = site.posts | slice: 0, 3 %}
   {% if featured_posts.size > 0 %}
-    <div class="article-grid">
-      {% for post in featured_posts %}
-      <article class="article-card">
-        <a class="article-art article-art-{{ forloop.index }}" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">
-          <span class="art-index">0{{ forloop.index }}</span>
-          <span class="article-art-symbol" aria-hidden="true">{% if forloop.index == 1 %}☼{% elsif forloop.index == 2 %}❋{% else %}☾{% endif %}</span>
-          <span class="art-read">Read the essay ↗</span>
-        </a>
-        <div class="article-meta"><span>{{ post.category | default: "Reflections" }}</span><span>{{ post.date | date: "%b %d, %Y" }}</span></div>
+  <div class="article-list">
+    {% for post in featured_posts %}
+    <article class="article-row">
+      <div class="article-number">0{{ forloop.index }}</div>
+      <div class="article-copy">
+        <p class="article-meta">{{ post.category | default: "Reflections" }} <span>·</span> {{ post.date | date: "%B %d, %Y" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
-        <a class="article-read-link" href="{{ post.url | relative_url }}">Continue reading <span aria-hidden="true">→</span></a>
-      </article>
-      {% endfor %}
-    </div>
+        <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        <a class="text-link" href="{{ post.url | relative_url }}">Read essay <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
   {% else %}
-    <div class="empty-journal">
-      <div class="empty-symbol" aria-hidden="true">✳</div>
-      <p class="eyebrow">The first page is waiting</p>
-      <h3>A journal grows one thoughtful story at a time.</h3>
-      <p>New essays on the poets, parables, and questions that keep the inner life awake will appear here.</p>
-    </div>
+  <p class="empty-note">The first essay is on its way. Please return soon.</p>
   {% endif %}
 </section>
 
-<section class="manifesto">
-  <div class="manifesto-mark" aria-hidden="true">✳</div>
-  <div class="manifesto-copy"><p class="eyebrow">Beyond the visible</p><h2>Old stories.<br><em>Ever-new</em> meanings.</h2><p>From the gardens of Rumi to the searching tales of Attar and the lucid counsel of Saadi, we read the classics as companions for the present moment.</p><a class="button button-outline" href="{{ '/traditions/' | relative_url }}">Meet the tradition <span aria-hidden="true">↗</span></a></div>
-  <div class="manifesto-side"><span class="side-rule"></span><p>Poetry as a doorway.<br>Silence as a teacher.<br>Attention as a practice.</p><span class="side-caption">A living inheritance</span></div>
-</section>
-
-<section class="newsletter-note">
-  <span class="newsletter-star" aria-hidden="true">✳</span>
-  <p class="eyebrow">A small invitation</p>
+<section class="closing-note">
+  <p class="eyebrow">A quieter kind of reading</p>
   <h2>Make room for <em>meaning.</em></h2>
-  <p>Stay with a story a little longer. Let an old voice ask a new question.</p>
-  <a class="text-link" href="{{ '/essays/' | relative_url }}">Begin with an essay <span aria-hidden="true">→</span></a>
+  <p>Thoughtful readings of enduring stories, written for curious minds and attentive hearts.</p>
+  <a class="primary-link" href="{{ '/about/' | relative_url }}">About the journal <span aria-hidden="true">→</span></a>
 </section>
