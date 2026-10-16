@@ -1,0 +1,16 @@
+---
+layout: default
+title: Essays
+description: Explore essays on Sufi literature, parables, poetry, and the inner life.
+permalink: /essays/
+---
+<header class="page-header"><p class="eyebrow">The reading room</p><h1>Essays for the <em>inward eye.</em></h1><p>Stories, interpretations, and reflections from a tradition that keeps asking us to see more deeply.</p></header>
+<section class="essay-list">
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+  <article class="essay-row"><span class="essay-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div><p class="eyebrow">{{ post.category | default: "Reflections" }} · {{ post.date | date: "%B %d, %Y" }}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.excerpt | strip_html | truncate: 200 }}</p><a class="text-link" href="{{ post.url | relative_url }}">Read essay <span aria-hidden="true">→</span></a></div></article>
+  {% endfor %}
+{% else %}
+  <div class="empty-journal"><div class="empty-symbol" aria-hidden="true">✳</div><p class="eyebrow">A collection in the making</p><h3>Every great journey begins with a first line.</h3><p>Our essays will gather here: thoughtful readings of Sufi poets, parables, and the art of paying attention.</p></div>
+{% endif %}
+</section>
