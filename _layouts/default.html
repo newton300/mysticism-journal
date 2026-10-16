@@ -1,57 +1,38 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f2e9">
+  <meta name="theme-color" content="#f8f5ee">
   <meta name="color-scheme" content="light">
   {% seo %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="icon" href="{{ '/assets/images/editorial-motif.svg' | relative_url }}" type="image/svg+xml">
   {% feed_meta %}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Mysticism Journal home">
-      <span class="brand-seal" aria-hidden="true"></span>
-      <span class="brand-words"><span class="brand-name">Mysticism <span>Journal</span></span><span class="brand-tagline">A literature of the inner life</span></span>
-    </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <a class="site-title" href="{{ '/' | relative_url }}">Mysticism Journal</a>
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/essays/' | relative_url }}" {% if page.url contains '/essays' %}aria-current="page"{% endif %}>Essays</a>
       <a href="{{ '/traditions/' | relative_url }}" {% if page.url contains '/traditions' %}aria-current="page"{% endif %}>Traditions</a>
       <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a>
     </nav>
-    <a class="header-cta" href="{{ '/essays/' | relative_url }}">Read the journal <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">{{ content }}</main>
   <footer class="site-footer">
-    <div class="footer-top">
-      <a class="brand footer-brand" href="{{ '/' | relative_url }}">
-        <span class="brand-seal" aria-hidden="true"></span>
-        <span class="brand-words"><span class="brand-name">Mysticism <span>Journal</span></span><span class="brand-tagline">A literature of the inner life</span></span>
-      </a>
-      <p class="footer-thought">“There is a world within the world.”<span>A journal for curious hearts.</span></p>
-      <nav class="footer-links" aria-label="Footer navigation"><a href="{{ '/essays/' | relative_url }}">Essays</a><a href="{{ '/traditions/' | relative_url }}">Traditions</a><a href="{{ '/about/' | relative_url }}">About</a></nav>
-    </div>
-    <div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} Mysticism Journal. All rights reserved.</span><span>Made for the love of words <span aria-hidden="true">✳</span></span></div>
+    <a class="footer-title" href="{{ '/' | relative_url }}">Mysticism Journal</a>
+    <p>A literary journal exploring Sufi poetry, stories, and the inner life.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="{{ '/essays/' | relative_url }}">Essays</a>
+      <a href="{{ '/traditions/' | relative_url }}">Traditions</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+    <div class="footer-bottom">© {{ 'now' | date: '%Y' }} Mysticism Journal. All rights reserved.</div>
   </footer>
-  <script>
-    (function () {
-      var button = document.querySelector('.menu-toggle');
-      var nav = document.querySelector('.site-nav');
-      if (!button || !nav) return;
-      button.addEventListener('click', function () {
-        var expanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('is-open', !expanded);
-      });
-    }());
-  </script>
 </body>
 </html>
