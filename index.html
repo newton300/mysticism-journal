@@ -1,23 +1,49 @@
 ---
 layout: default
-title: A journal of the inner life
-description: Thoughtful essays on Rumi, Attar, Saadi, and the living tradition of Sufi wisdom.
+title: Mysticism Journal
+description: A space for reflections on Sufism, sacred literature, and the enduring wisdom of the East and West.
 ---
+
 <section class="home-hero">
-  <p class="eyebrow">Literature · Mysticism · Reflection</p>
-  <h1>Words for the<br><em>inner life.</em></h1>
-  <p class="hero-description">A literary journal exploring the stories, poems, and ideas that invite us to look beyond the surface.</p>
-  <a class="primary-link" href="{{ '/essays/' | relative_url }}">Explore the essays <span aria-hidden="true">→</span></a>
-  <div class="hero-rule"></div>
-  <p class="hero-note">Read slowly. Think deeply. Return often.</p>
+  <div class="hero-copy">
+    <p class="eyebrow">Exploring the timeless</p>
+    <h1>Mysticism Journal</h1>
+    <p class="hero-description">A space for reflections on Sufism, sacred literature, and the enduring wisdom of the East and West.</p>
+    <a class="primary-link" href="{{ '/essays/' | relative_url }}">Explore essays <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="hero-image" role="img" aria-label="Sunlit historic city by the water, framed by a quiet reading terrace"></div>
 </section>
 
-<section class="welcome-section">
-  <div class="welcome-label">Our point of view</div>
-  <div class="welcome-copy">
-    <h2>Old wisdom, read with fresh attention.</h2>
-    <p>From Rumi's poetry to the searching tales of Attar and the clear-eyed counsel of Saadi, the Sufi literary tradition offers more than answers. It offers ways to ask better questions about love, pride, generosity, and what it means to live well.</p>
-    <a class="text-link" href="{{ '/traditions/' | relative_url }}">Discover the tradition <span aria-hidden="true">→</span></a>
+<section class="featured-section">
+  <div class="section-heading">
+    <h2>Featured Essays</h2>
+    <a class="text-link" href="{{ '/essays/' | relative_url }}">View all essays <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="featured-grid">
+    <a class="feature-card" href="{{ '/essays/' | relative_url }}">
+      <div class="feature-image image-whirling" role="img" aria-label="A Sufi dervish in a sunlit stone hall"></div>
+      <p class="feature-category">Sufism</p>
+      <h3>The Wisdom of Rumi</h3>
+      <p>Exploring the timeless teachings of Rumi and their relevance today.</p>
+    </a>
+    <a class="feature-card" href="{{ '/essays/' | relative_url }}">
+      <div class="feature-image image-book" role="img" aria-label="An antique book with gold ornament and pale flowers"></div>
+      <p class="feature-category">Poetry</p>
+      <h3>The Language of the Soul</h3>
+      <p>How mystical poetry speaks beyond reason and into the heart.</p>
+    </a>
+    <a class="feature-card" href="{{ '/traditions/' | relative_url }}">
+      <div class="feature-image image-city" role="img" aria-label="Historic domes and rooftops in warm afternoon light"></div>
+      <p class="feature-category">Figures</p>
+      <h3>Ibn Arabi and the Unity of Being</h3>
+      <p>A journey into the thought of Ibn Arabi and his vision of divine reality.</p>
+    </a>
+    <a class="feature-card" href="{{ '/essays/' | relative_url }}">
+      <div class="feature-image image-lantern" role="img" aria-label="A brass lantern and books on a quiet reading terrace"></div>
+      <p class="feature-category">Culture</p>
+      <h3>The Art of Inner Silence</h3>
+      <p>Reflections on solitude, contemplation, and the modern restless mind.</p>
+    </a>
   </div>
 </section>
 
@@ -25,7 +51,7 @@ description: Thoughtful essays on Rumi, Attar, Saadi, and the living tradition o
   <div class="section-heading">
     <div>
       <p class="eyebrow">From the journal</p>
-      <h2>Recent essays</h2>
+      <h2>Recent Essays</h2>
     </div>
     <a class="text-link" href="{{ '/essays/' | relative_url }}">All essays <span aria-hidden="true">→</span></a>
   </div>
@@ -36,7 +62,7 @@ description: Thoughtful essays on Rumi, Attar, Saadi, and the living tradition o
     <article class="article-row">
       <div class="article-number">0{{ forloop.index }}</div>
       <div class="article-copy">
-        <p class="article-meta">{{ post.category | default: "Reflections" }} <span>·</span> {{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="article-meta">{{ post.category | default: "Reflections" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
         <a class="text-link" href="{{ post.url | relative_url }}">Read essay <span aria-hidden="true">→</span></a>
