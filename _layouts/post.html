@@ -7,7 +7,7 @@ layout: default
     <p class="eyebrow">{{ page.category | default: "Reflections" }} <span class="meta-dot">·</span> {{ page.date | date: "%B %d, %Y" }}</p>
     <h1>{{ page.title | escape }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
-    <div class="post-byline"><span class="byline-seal">م</span><span>From the editors of <strong>Mysticism Journal</strong></span><span class="byline-divider"></span><span>{{ content | number_of_words | divided_by: 220 | at_least: 1 }} min read</span></div>
+    <div class="post-byline"><span class="byline-seal" aria-hidden="true">✳</span><span>From the editors of <strong>Mysticism Journal</strong></span><span class="byline-divider"></span><span>{{ content | number_of_words | divided_by: 220 | at_least: 1 }} min read</span></div>
   </header>
   <div class="post-art" aria-hidden="true"><span class="post-art-sun"></span><span class="post-art-arch"></span><span class="post-art-caption">A moment of reflection</span></div>
   <div class="post-content">{{ content }}</div>
