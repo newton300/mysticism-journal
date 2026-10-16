@@ -1,0 +1,26 @@
+title: Mysticism Journal
+description: Essays on Sufi literature, mysticism, and the enduring wisdom of the heart.
+url: "https://www.mysticismjournal.com"
+baseurl: ""
+lang: en
+timezone: UTC
+markdown: kramdown
+permalink: /:categories/:title/
+paginate: 6
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Mysticism Journal
+      image: /assets/images/editorial-motif.svg
+      permalink: /:year/:month/:title.html
